@@ -1,0 +1,30 @@
+{
+   "name": "cookie_clicker_api",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "start": "nodemon index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Karnak19/Cookie_clicker_api.git"
+   },
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/Karnak19/Cookie_clicker_api/issues"
+   },
+   "homepage": "https://github.com/Karnak19/Cookie_clicker_api#readme",
+   "dependencies": {
+      "dotenv": "^7.0.0",
+      "hapi": "^18.1.0",
+      "hapi-swagger": "^9.4.2",
+      "inert": "^5.1.2",
+      "vision": "^5.4.4"
+   },
+   "devDependencies": {
+      "nodemon": "^1.18.10"
+   }
+}
