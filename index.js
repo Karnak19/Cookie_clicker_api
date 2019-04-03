@@ -4,9 +4,10 @@ const Vision = require("vision");
 const HapiSwagger = require("hapi-swagger");
 const Pack = require("./package");
 require("dotenv").config();
+
 (async () => {
    const server = await new Hapi.Server({
-      host: process.env.HOST || "localhost",
+      host: "localhost",
       port: process.env.PORT || 3000
    });
 
@@ -37,12 +38,12 @@ require("dotenv").config();
       console.log(err);
       process.exit(1);
    });
-
    server.route({
       method: "GET",
-      path: "/",
+      path: "/loool",
       handler: (request, h) => {
          return "Hello, world!";
       }
    });
+   server.route(require("./routes"));
 })();
