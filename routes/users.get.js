@@ -1,8 +1,8 @@
 module.exports = {
-   path: "/scores",
+   path: "/users",
    method: "GET",
    handler: (request, h) => {
-      return "Hello World";
+      return "Get users";
    },
    options: {
       description: "Scores",
