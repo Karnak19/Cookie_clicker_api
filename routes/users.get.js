@@ -1,8 +1,10 @@
+const User = require("../models/user");
+
 module.exports = {
    path: "/users",
    method: "GET",
    handler: (request, h) => {
-      return "Get users";
+      return User.findAll();
    },
    options: {
       description: "Scores",

@@ -4,9 +4,6 @@ const Inert = require("inert");
 const Vision = require("vision");
 const HapiSwagger = require("hapi-swagger");
 const Pack = require("./package");
-const env = process.env.NODE_ENV || "development";
-const Sequelize = require("sequelize");
-const config = require(__dirname + "/config/config.json")[env];
 
 (async () => {
    const server = await new Hapi.Server({
@@ -27,18 +24,6 @@ const config = require(__dirname + "/config/config.json")[env];
       {
          plugin: HapiSwagger,
          options: swaggerOptions
-      },
-      {
-         plugin: require("hapi-sequelizejs"),
-         options: [
-            {
-               name: "database_development_c_clicker", // identifier
-               models: [__dirname + "/models/*.js"], // paths/globs to model files
-               sequelize: new Sequelize(config), // sequelize instance
-               sync: true, // sync models - default false
-               forceSync: false // force sync (drops tables) - default false
-            }
-         ]
       }
    ]);
 
