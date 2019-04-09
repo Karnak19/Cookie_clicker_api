@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const sequelize = require("sequelize");
+const Joi = require("joi");
 
 module.exports = {
    path: "/{id}/click",
@@ -21,14 +22,11 @@ module.exports = {
    options: {
       description: "Scores",
       notes: "Return the collection of users scores",
-      tags: ["api"]
-      // validate: {
-      //    payload: Joi.object({
-      //       : Joi.string()
-      //          .alphanum()
-      //          .min(5)
-      //          .max(20)
-      //    })
-      // }
+      tags: ["api"],
+      validate: {
+         params: {
+            id: Joi.number()
+         }
+      }
    }
 };
