@@ -6,12 +6,10 @@ module.exports = {
    path: "/{id}/click",
    method: "POST",
    handler: (request, h) => {
-      const payload = request.payload;
       return User.update(
          {
             score: sequelize.literal("score+1")
          },
-
          {
             where: {
                id: request.params.id
@@ -21,7 +19,7 @@ module.exports = {
    },
    options: {
       description: "Scores",
-      notes: "Return the collection of users scores",
+      notes: "Increment the user score",
       tags: ["api"],
       validate: {
          params: {

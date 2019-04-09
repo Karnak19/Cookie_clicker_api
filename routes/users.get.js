@@ -1,14 +1,24 @@
 const User = require("../models/user");
+const Joi = require("joi");
 
 module.exports = {
-   path: "/users",
+   path: "/users/{id}",
    method: "GET",
    handler: (request, h) => {
-      return User.findAll();
+      return User.findAll({
+         where: {
+            id: request.params.id
+         }
+      });
    },
    options: {
-      description: "Scores",
-      notes: "Return the collection of users scores",
-      tags: ["api"] // ADD THIS TAG
+      description: "One User",
+      notes: "Return an User",
+      tags: ["api"],
+      validate: {
+         params: {
+            id: Joi.number()
+         }
+      }
    }
 };

@@ -2,11 +2,10 @@ const User = require("../models/user");
 const Joi = require("joi");
 
 module.exports = {
-   path: "/subscribe",
+   path: "/users/subscribe",
    method: "POST",
    handler: (request, h) => {
-      const payload = request.payload;
-      return User.create(payload);
+      return User.create(request.payload);
    },
    options: {
       description: "Subscribing",

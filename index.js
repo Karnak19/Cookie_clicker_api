@@ -14,6 +14,7 @@ const Pack = require("./package");
    const swaggerOptions = {
       info: {
          title: "Cookie Clicker API",
+         description: "API du Cookie Clicker, Project 2 Wild Code School Bidart Février 2019",
          version: Pack.version
       }
    };
